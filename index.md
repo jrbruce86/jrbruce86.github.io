@@ -229,7 +229,7 @@ public void customerSubsequentPurchaseSuccessful() {
 }
 ```
 
-<p> Now when we run the test, the code coverage tool reveals that we have completely covered all paths of this function as shown below: </p>
+Now when we run the test, the code coverage tool reveals that we have completely covered all paths of this function as shown below:
 
 <p><img src="./SingleStone&#39;s Software Expertise_files/1.2coverage.png" width="100%" style="border-width:50x;border-style:solid"></p>
 
@@ -237,12 +237,11 @@ public void customerSubsequentPurchaseSuccessful() {
 
 <h4>Conclusion:</h4>
 In this blog we've discussed the importance, positive outcomes, and potential pitfalls of unit testing and demonstrated techniques teams can use for writing effective unit tests through a concrete example. Let's review some important takeaways.
+<br><br>
 
-
-</br>
-- <b>Unit tests only verify developer intent:</b> While unit tests are useful, requirements must be verified with other forms of testing (e.g. functional and performance tests).
-- <b>Training is key:</b> Teams need developers with the education and discipline needed to consistently write effective unit tests.
-- <b>Requirements Gathering:</b> Developers must gather requirements early on and throughout development to ensure they are on the right track in their code and tests, otherwise the tests and code may be a waste of time and effort.
+  - <b>Unit tests only verify developer intent:</b> While unit tests are useful, requirements must be verified with other forms of testing (e.g. functional and performance tests).
+  - <b>Training is key:</b> Teams need developers with the education and discipline needed to consistently write effective unit tests.
+  - <b>Requirements Gathering:</b> Developers must gather requirements early on and throughout development to ensure they are on the right track in their code and tests, otherwise the tests and code may be a waste of time and effort.
 
 In conclusion, teams who write unit tests that matter will see more robust and self revised code being released as well as a boost in predictable and consistent behavior between releases regardless of staffing changes.
 
