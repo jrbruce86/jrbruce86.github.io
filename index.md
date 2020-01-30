@@ -39,7 +39,7 @@ Now let's begin going over a concrete example of how unit tests can be put to us
 
 The scenarios covered in this blog involve the implementation and unit tests for making a purchase.
 
-```Java class:"lineNo"
+```Java
 @PostMapping("/purchase")
 public PurchaseRecord purchase(final @RequestBody InboundPurchaseRecordDTO purchaseRecordDTO) {
   if(customerRepository.findById(purchaseRecordDTO.getCustomerID()).isEmpty()) {
@@ -238,6 +238,8 @@ public void customerSubsequentPurchaseSuccessful() {
 <h4>Conclusion:</h4>
 In this blog we've discussed the importance, positive outcomes, and potential pitfalls of unit testing and demonstrated techniques teams can use for writing effective unit tests through a concrete example. Let's review some important takeaways.
 
+
+</br>
 - <b>Unit tests only verify developer intent:</b> While unit tests are useful, requirements must be verified with other forms of testing (e.g. functional and performance tests).
 - <b>Training is key:</b> Teams need developers with the education and discipline needed to consistently write effective unit tests.
 - <b>Requirements Gathering:</b> Developers must gather requirements early on and throughout development to ensure they are on the right track in their code and tests, otherwise the tests and code may be a waste of time and effort.
