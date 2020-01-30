@@ -14,7 +14,7 @@ Each unit test can be viewed simply as a developer "<a href="https://www.excella
   - <b>Readable:</b> The tests need to follow a consistent pattern that is easily understood by other developers.
   - <b>Automated:</b> The tests need to run periodically as new functionality is developed and released.
 
-When teams put this practice into place correctly, something magic happens. Let's discuss an example. </p>
+When teams put this practice into place correctly, something magic happens. Let's discuss an example.
 
 <h4>Unit Tests Keep Code Stable</h4>
 Say there are two developers, Martha and John, who are contracted to work on a customer facing application. Martha has worked on the project for several months and has implemented all of its functionality which is currently working in production. When her contract ends or she takes extended leave, John has to step in for her to continue where she left off. Assuming Martha had taken the time to unit test her code from every scenario, John may find himself breaking her tests at first. As he studies the failures one by one, he begins to understand not only Martha's intent but also subtle details, otherwise easily overlooked, which could make or break the system. As John learns and adjust his solutions as needed by the unit tests, he and his team can deploy their next release to production on time and with confidence that none of the pre-existing features will be broken.
@@ -126,7 +126,7 @@ public void setup() {
 }
 ```
 
-<p> With the SUT instantiated as shown above, we are now in a position where we can test the initial purchase in isolation by stubbing the behaviors of the mocks as shown in the Setup section of the unit test below: </p>
+With the SUT instantiated as shown above, we are now in a position where we can test the initial purchase in isolation by stubbing the behaviors of the mocks as shown in the Setup section of the unit test below:
 
 ```Java
 /**
@@ -155,7 +155,11 @@ By manipulating the behavior of the dependency mocks as shown above we can set u
   - <b>Enable the SUT to return the database record</b>
     - Line 15: <i>When</i> the PurchaseRecordRepository save method is given the database record, <i>then</i> the database record is returned back as an indirect input to the SUT.
 
-Now let's cover what happens when the tested method is exercised with these indirect inputs in place. </p><h4>Exercise</h4><p>Now, when the purchase method is exercised as shown below,
+Now let's cover what happens when the tested method is exercised with these indirect inputs in place.
+
+<h4>Exercise</h4>
+
+Now, when the purchase method is exercised as shown below,
 
 ```Java
 /**
@@ -164,13 +168,14 @@ Now let's cover what happens when the tested method is exercised with these indi
 final PurchaseRecord actualResult = systemUnderTest.purchase(DefaultStoreValues.defaultInboundCustomerPurchase);
 ```
 
-<p>we can verify that the correct path of code was executed or not. We can do so by running the test and leveraging our <a href="https://docs.gradle.org/current/userguide/jacoco_plugin.html">code coverage tool</a> whose output is illustrated below.</p>
+we can verify that the correct path of code was executed or not. We can do so by running the test and leveraging our <a href="https://docs.gradle.org/current/userguide/jacoco_plugin.html">code coverage tool</a> whose output is illustrated below.
 
 <img src="./SingleStone&#39;s Software Expertise_files/initialpurchasecoverage.png" width="100%" style="border-width:50x;border-style:solid">
 
-<p>Notice that the path we are executing in our test is green, the yellow shows that only 1 of 2 branches in the if statement have been run so far, the red shows paths that have not been tested.</p>
+Notice that the path we are executing in our test is green, the yellow shows that only 1 of 2 branches in the if statement have been run so far, the red shows paths that have not been tested.
 
-<h4>Verify:</h4><p>While the code coverage tool does confirm that the code path of the scenario is run, it cannot confirm the <b>Expected Behavior</b> defined above actually occurred. As mentioned previously there is not a lot the code we are testing does, it is only delegating the responsibilities of database storage/retrieval and translation to its dependencies. The purpose of the verification step is to ensure that the SUT performed this delegation correctly and provided the expected outcomes. The purpose of the verification section of the unit test is to ensure that, when exercised with the indirect inputs specified during setup, the SUT will behave as expected. In this case, what we need to verify is that (1) the customer record is saved (2) the purchase record is saved (3) the saved purchase is returned by the SUT. Using the Mockito "verify" method we ensure all of the behavior occurred as expected as demonstrated below: </p>
+<h4>Verify:</h4>
+While the code coverage tool does confirm that the code path of the scenario is run, it cannot confirm the <b>Expected Behavior</b> defined above actually occurred. As mentioned previously there is not a lot the code we are testing does, it is only delegating the responsibilities of database storage/retrieval and translation to its dependencies. The purpose of the verification step is to ensure that the SUT performed this delegation correctly and provided the expected outcomes. The purpose of the verification section of the unit test is to ensure that, when exercised with the indirect inputs specified during setup, the SUT will behave as expected. In this case, what we need to verify is that (1) the customer record is saved (2) the purchase record is saved (3) the saved purchase is returned by the SUT. Using the Mockito "verify" method we ensure all of the behavior occurred as expected as demonstrated below:
 
 ```Java
 /**
@@ -183,7 +188,7 @@ Mockito.verify(purchaseRecordRepository, Mockito.times(1)).save(expectedResult);
 Assertions.assertTrue(expectedResult == actualResult, "The returned result does not match the expected result");
 ```
 
-<p>Since, as mentioned earlier, the SUT just passes this object around we don't need to verify the contents of the result in this test. However, we do need to verify that the method delegated responsibilities correctly as seen in the above code. </p>
+Since, as mentioned earlier, the SUT just passes this object around we don't need to verify the contents of the result in this test. However, we do need to verify that the method delegated responsibilities correctly as seen in the above code.
 
 <b>We can summarize the above code as follows:</b>
   - <b>The customer is saved</b>
@@ -232,9 +237,9 @@ public void customerSubsequentPurchaseSuccessful() {
 
 Now when we run the test, the code coverage tool reveals that we have completely covered all paths of this function as shown below:
 
-<p><img src="./SingleStone&#39;s Software Expertise_files/1.2coverage.png" width="100%" style="border-width:50x;border-style:solid"></p>
+<img src="./SingleStone&#39;s Software Expertise_files/1.2coverage.png" width="100%" style="border-width:50x;border-style:solid">
 
-<p>We can make sure the verification is correct in both of these scenarios by purposefully breaking some of the functionality in the implementation and ensuring the unit test now breaks where it didn't before. These tests will not only help us verify our code works as expected during development to resolve bugs early, but they may also prevent future developers from modifying this expected behavior later on without first thinking more in depth about the impacts to the current features.</p>
+We can make sure the verification is correct in both of these scenarios by purposefully breaking some of the functionality in the implementation and ensuring the unit test now breaks where it didn't before. These tests will not only help us verify our code works as expected during development to resolve bugs early, but they may also prevent future developers from modifying this expected behavior later on without first thinking more in depth about the impacts to the current features.
 
 <h4>Conclusion:</h4>
 In this blog we've discussed the importance, positive outcomes, and potential pitfalls of unit testing and demonstrated techniques teams can use for writing effective unit tests through a concrete example. Let's review some important takeaways.
