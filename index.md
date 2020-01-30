@@ -39,7 +39,7 @@ Now let's begin going over a concrete example of how unit tests can be put to us
 
 The scenarios covered in this blog involve the implementation and unit tests for making a purchase.
 
-```Java
+```Java class:"line-no"
 @PostMapping("/purchase")
 public PurchaseRecord purchase(final @RequestBody InboundPurchaseRecordDTO purchaseRecordDTO) {
   if(customerRepository.findById(purchaseRecordDTO.getCustomerID()).isEmpty()) {
