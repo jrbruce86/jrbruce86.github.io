@@ -12,6 +12,5 @@
 ### Blog(s)
 
 [Unit Test Blog](/unitTestBlog)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
 
 ---
