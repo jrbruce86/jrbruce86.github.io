@@ -4,7 +4,7 @@ If put into practice correctly, unit tests enable developers to proactively fix 
 
 <br>
 Each unit test can be viewed simply as a developer "<a href="https://www.excella.com/insights/why-is-unit-testing-important">intention check</a>" which verifies that the unit of logic (usually a subroutine/function) is behaving as expected by the developer for a given scenario.
-</p>
+<br>
 
 <b> Putting unit tests into practice correctly requires attention to each of the following areas:</b>
   - <b>Requirements Gathering:</b> Developers must take their due diligence to confirm their understanding of requirements for how the system should work in each scenario they are testing.
@@ -32,7 +32,6 @@ To avoid common pitfalls of uneffective unit testing, the most important thing f
 <br>**Unit Testing Walkthrough**</br>
 Now let's begin going over a concrete example of how unit tests can be put to use by developers. While this concrete example will involve walking through a Java project, the concepts will be explained such that the ideas can be translated to any other programming language. For more details about unit testing techniques I strongly recommend the book <a href="http://xunitpatterns.com/index.html">XUnit Test Patterns: Refactoring Test Code</a>. Since unit tests must trace back to requirements, lets start with listing out the requirements for our concrete example, a simple customer lookup API. Let's say that we have a retail store which wants to start auditing purchases and decides to hire your team to quickly roll out an API that must meet the below requirements for all new purchases.
 
-\
 <b>Below is the specification of what the API must support through its endpoints:</b>
   - Storage and retrieval of each customer purchase.
   - Retrieve full list of customers
