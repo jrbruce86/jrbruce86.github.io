@@ -1,3 +1,5 @@
+<h1>Writing Unit Tests That Matter</h1>
+
 If put into practice correctly, unit tests enable developers to proactively fix logic errors and teams to deliver the correct solution in a predictable and managed way. In this blog we'll discuss why unit tests are important and demonstrate techniques for writing them through a concrete example. Let's first define unit tests.
 
 <blockquote> Unit tests are a specialized form of automated testing written by developers that verifies small isolated paths of logic work as intended by the developer. </blockquote>
