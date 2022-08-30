@@ -20,7 +20,7 @@ Each unit test can be viewed simply as a developer "<a href="https://www.excella
 
 When teams put this practice into place correctly, something magic happens. Let's discuss an example.
 
-<br>**Unit Tests Keep Code Stable**<br>
+<br>**Unit Tests Help to Keep Code Stable**<br>
 Say there are two developers, Martha and John, who are contracted to work on a customer facing application. Martha has worked on the project for several months and has implemented all of its functionality which is currently working in production. When her contract ends or she takes extended leave, John has to step in for her to continue where she left off. Assuming Martha had taken the time to unit test her code from every scenario, John may find himself breaking her tests at first. As he studies the failures one by one, he begins to understand not only Martha's intent but also subtle details, otherwise easily overlooked, which could make or break the system. As John learns and adjust his solutions as needed by the unit tests, he and his team can deploy their next release to production on time and with confidence that none of the pre-existing features will be broken.
 
 <br>**Unit Tests Promote Self Revision**<br>
