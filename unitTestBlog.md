@@ -1,4 +1,4 @@
-<h1>Writing Unit Tests That Matter</h1>
+<h1>Writing Effective Unit Tests</h1>
 
 If put into practice correctly, unit tests enable developers to proactively fix logic errors and teams to deliver the correct solution in a predictable and managed way. In this blog we'll discuss why unit tests are important and demonstrate techniques for writing them through a concrete example. Let's first define unit tests.
 
@@ -252,7 +252,7 @@ In this blog we've discussed the importance, positive outcomes, and potential pi
   - <b>Training is key:</b> Teams need developers with the education and discipline needed to consistently write effective unit tests.
   - <b>Requirements Gathering:</b> Developers must gather requirements early on and throughout development to ensure they are on the right track in their code and tests, otherwise the tests and code may be a waste of time and effort.
 
-In conclusion, teams who write unit tests that matter will see more robust and self revised code being released as well as a boost in predictable and consistent behavior between releases regardless of staffing changes.
+In conclusion, teams who write effective unit tests will see more robust and self revised code being released as well as a boost in predictable and consistent behavior between releases regardless of staffing changes.
 
 <br>**Feedback and Suggestions:**<br>
 One of the positive outcomes for the developers who write unit tests effectively is that the process often reveals simpler and better solutions. Has writing unit tests ever changed your view of a challenging problem? Have unit tests helped keep your team in line with its goals? Have you experienced one of the pitfalls of uneffective unit testing practices? Let us know your thoughts in the comments section. For the complete source code of the above example project, visit the <a href="https://github.com/jrbruce86/singlestone-unittest-blog">github</a> page.
